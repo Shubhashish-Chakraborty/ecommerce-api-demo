@@ -4,6 +4,8 @@ import { MONGO_URL, PORT } from './config';
 
 import { ProductRouter } from './routes/ProductRoutes';
 import { UserRouter } from './routes/UserRoutes';
+import { CartRouter } from './routes/CartRoutes';
+import { OrderRouter } from './routes/OrderRoutes';
 
 const app = express();
 
@@ -11,6 +13,8 @@ app.use(express.json()); // Parse JSON bodies
 
 app.use("/api/products" , ProductRouter)
 app.use("/api/auth/user" , UserRouter)
+app.use("/api/cart" , CartRouter)
+app.use("/api/order" , OrderRouter);
 
 app.get('/' , (req , res) => {
     res.send("Ecommerce API is UP!!")

@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { JWT_USER_SECRET } from '../config';
 
-export const auth = (req: Request, res: Response, next: NextFunction) => {
+export const UserAuth = (req: Request, res: Response, next: NextFunction) => {
     const token = req.header('Authorization');
 
     if (!token) {
